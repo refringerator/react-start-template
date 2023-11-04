@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import { Header } from './Header';
 import { MediumLogo } from '../logo/logo.stories';
 
@@ -9,18 +9,12 @@ const meta: Meta<typeof Header> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Header>;
 
-export const HeaderWithLogo: Story = {
-  name: 'Шапка приложения c лого',
-  render: (args) => (
-    <Header {...args}>
-      <MediumLogo />
-    </Header>
-  ),
-};
+const Template: StoryFn<typeof Header> = (args) => <Header {...args} />;
 
-export const HeaderWithoutLogo: Story = {
-  name: 'Шапка приложения без лого',
-  render: (args) => <Header {...args}></Header>,
-};
+export const HeaderWithLogo = Template.bind({});
+HeaderWithLogo.storyName = 'Шапка c лого';
+HeaderWithLogo.args = { children: <MediumLogo /> };
+
+export const HeaderWithoutLogo = Template.bind({});
+HeaderWithoutLogo.storyName = 'Шапка без лого';
