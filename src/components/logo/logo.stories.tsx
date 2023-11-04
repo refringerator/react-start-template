@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 import { Logo } from './Logo';
 
 const meta: Meta<typeof Logo> = {
@@ -7,9 +7,9 @@ const meta: Meta<typeof Logo> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Logo>;
 
-export const Default: Story = {
-  name: 'Лого',
-  render: () => <Logo />,
-};
+const Template: StoryFn<typeof Logo> = (args) => <Logo {...args} />;
+
+export const MediumLogo = Template.bind({});
+
+MediumLogo.storyName = 'Лого';
