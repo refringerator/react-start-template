@@ -1,28 +1,20 @@
-import { FC } from 'react';
+import { FC, PropsWithChildren } from 'react';
 import cn from 'clsx';
 import './button.css';
 
 interface ButtonProps {
-  primary?: boolean;
-  backgroundColor?: string | null;
+  type?: string;
   size?: string;
-  label: string;
+  icon: boolean;
 }
 /**
  * Primary UI component for user interaction
  */
 
-export const Button: FC<ButtonProps> = ({ primary, backgroundColor, size, label, ...props }) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
-
+export const Button: FC<PropsWithChildren<ButtonProps>> = ({ children, type, icon, size, ...props }) => {
   return (
-    <button
-      type="button"
-      className={cn('storybook-button', `storybook-button--${size}`, mode)}
-      style={{ backgroundColor: backgroundColor || 'green' }}
-      {...props}
-    >
-      {label}
+    <button className={cn('button', `${icon ? 'button--icon' : ''}`, `button--${type}`, `button--${size}`)}>
+      <span className="button--inner">{children}</span>
     </button>
   );
 };
