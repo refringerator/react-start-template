@@ -11,7 +11,7 @@ interface ButtonProps {
  * Primary UI component for user interaction
  */
 
-export const Button: FC<PropsWithChildren<ButtonProps>> = ({ children, type, icon, size, ...props }) => {
+export const Button: FC<PropsWithChildren<ButtonProps>> = ({ children, type, icon, size }) => {
   return (
     <button className={cn('button', `${icon ? 'button--icon' : ''}`, `button--${type}`, `button--${size}`)}>
       <span className="button--inner">{children}</span>
