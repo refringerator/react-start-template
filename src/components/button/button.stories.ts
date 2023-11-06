@@ -5,34 +5,13 @@ const meta: Meta<typeof Button> = {
   title: 'Общее/Кнопка',
   component: Button,
   tags: ['autodocs'],
-
-  argTypes: {
-    type: {
-      type: 'string',
-      description: 'Button type',
-      defaultValue: 'primary',
-      options: ['primary', 'secondary', 'danger', 'success', 'disabled'],
-      control: {
-        type: 'select',
-      },
-    },
-    size: {
-      type: 'string',
-      description: 'Button size',
-      defaultValue: 'medium',
-      options: ['small', 'medium', 'large'],
-      control: {
-        type: 'select',
-      },
-    },
-  },
 };
 
 export default meta;
 
 export const DefaultButton = {
   args: {
-    children: 'Button',
+    children: 'Нажми на меня ;)',
     icon: false,
     type: 'primary',
     size: 'medium',
@@ -41,7 +20,7 @@ export const DefaultButton = {
 
 export const Icon = {
   args: {
-    children: 'Icon',
+    children: 'Я просто значек',
     icon: true,
     type: 'primary',
     size: 'medium',
