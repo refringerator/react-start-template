@@ -2,7 +2,7 @@ import type { Meta } from '@storybook/react';
 import { ProductCard } from './ProductCard';
 
 const meta: Meta<typeof ProductCard> = {
-  title: 'WIP/Карточка товара',
+  title: 'Элементы магазина/Карточка товара',
   component: ProductCard,
   tags: ['autodocs'],
 
