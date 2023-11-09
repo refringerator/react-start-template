@@ -1,6 +1,5 @@
 import { FC, PropsWithChildren } from 'react';
 import { Button } from '../button/Button';
-import { CartButton } from '../cart-button/CartButton';
 import './cart-item.css';
 
 interface CartItemProps {
