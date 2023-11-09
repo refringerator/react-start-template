@@ -2,18 +2,12 @@ import type { Meta } from '@storybook/react';
 import { ProductPage } from './ProductPage';
 
 const meta: Meta<typeof ProductPage> = {
-  title: 'Общее/Страница товара',
+  title: '"Элементы магазина"/Страница товара',
   component: ProductPage,
-  tags: ['autodocs'],
-
   argTypes: {
     type: {
-      type: 'string',
-      description: 'Button type',
-      defaultValue: 'default',
-      options: ['default', 'disabled'],
       control: {
-        type: 'select',
+        type: 'inline-radio',
       },
     },
   },
@@ -22,6 +16,7 @@ const meta: Meta<typeof ProductPage> = {
 export default meta;
 
 export const DefaultButton = {
+  name: 'Заполненная страница',
   args: {
     type: 'default',
     categoryName: 'Программирование',

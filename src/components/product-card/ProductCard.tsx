@@ -3,7 +3,7 @@ import { CartButton, CartButtonProps } from '../cart-button/CartButton';
 import { CartItemProps } from '../cart-item/CartItem';
 import './product-card.css';
 
-interface ProductCardProps extends CartItemProps, CartButtonProps {
+export interface ProductCardProps extends CartItemProps, CartButtonProps {
   cardType?: TCardType;
 }
 
