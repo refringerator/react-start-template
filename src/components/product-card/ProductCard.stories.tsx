@@ -2,18 +2,14 @@ import type { Meta } from '@storybook/react';
 import { ProductCard } from './ProductCard';
 
 const meta: Meta<typeof ProductCard> = {
-  title: 'Общее/Карточка товара',
+  title: 'WIP/Карточка товара',
   component: ProductCard,
   tags: ['autodocs'],
 
   argTypes: {
-    type: {
-      type: 'string',
-      description: 'Button type',
-      defaultValue: 'default',
-      options: ['default', 'disabled'],
+    cardType: {
       control: {
-        type: 'select',
+        type: 'inline-radio',
       },
     },
   },
@@ -21,9 +17,10 @@ const meta: Meta<typeof ProductCard> = {
 
 export default meta;
 
-export const DefaultButton = {
+export const DefaultCard = {
+  name: 'Карточка товара',
   args: {
-    type: 'default',
+    cardType: 'default',
     categoryName: 'Программирование',
     name: 'React.js Developer',
     price: '80000',

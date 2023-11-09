@@ -1,29 +1,24 @@
 import { FC, PropsWithChildren } from 'react';
-import { CartButton } from '../cart-button/CartButton';
+import { CartButton, CartButtonProps } from '../cart-button/CartButton';
+import { CartItemProps } from '../cart-item/CartItem';
 import './product-card.css';
 
-interface CartButtonProps {
-  icon?: boolean;
-  type?: string;
-  size?: string;
-  price: number;
-  priceOld: number;
-  description: string;
-  imageUrl: string;
-  name: string;
-  categoryName: string;
+interface ProductCardProps extends CartItemProps, CartButtonProps {
+  cardType?: TCardType;
 }
 
-export const ProductCard: FC<PropsWithChildren<CartButtonProps>> = ({
+export type TCardType = 'default' | 'disabled';
+
+export const ProductCard: FC<PropsWithChildren<ProductCardProps>> = ({
   imageUrl,
   name,
   categoryName,
   description,
   price,
   priceOld,
-  type = 'default',
+  cardType = 'default',
 }) => (
-  <div className={`card card--${type}`}>
+  <div className={`card card--${cardType}`}>
     <div className="card--inner">
       <div className="card--image__wrapper">
         <img className="card--image" src={imageUrl} alt={name} />
