@@ -10,6 +10,7 @@ const meta: Meta<typeof CartItem> = {
 export default meta;
 
 export const ReactCart = {
+  name: 'Продается React',
   args: {
     categoryName: 'Программирование',
     name: 'React.js Developer',
