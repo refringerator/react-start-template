@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import './logo.css';
 import LogoSvg from '../../logo.svg';
 
