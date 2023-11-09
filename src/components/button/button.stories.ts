@@ -3,6 +3,7 @@ import { Button } from './Button';
 
 const meta: Meta<typeof Button> = {
   title: 'Общее/Кнопка',
+  parameters: {},
   component: Button,
   tags: ['autodocs'],
 };
@@ -10,6 +11,7 @@ const meta: Meta<typeof Button> = {
 export default meta;
 
 export const DefaultButton = {
+  name: 'Обычная кнопка',
   args: {
     children: 'Нажми на меня ;)',
     icon: false,
@@ -19,10 +21,11 @@ export const DefaultButton = {
 };
 
 export const Icon = {
+  name: 'Значек',
   args: {
     children: 'Я просто значек',
     icon: true,
-    type: 'primary',
+    type: 'danger',
     size: 'medium',
   },
 };

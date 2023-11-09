@@ -1,8 +1,8 @@
-import { FC, PropsWithChildren } from 'react';
 import cn from 'clsx';
+import { FC, PropsWithChildren } from 'react';
 import './button.css';
 
-interface ButtonProps {
+export interface IButtonProps {
   /**
    * Тип кнопки
    */
@@ -11,24 +11,26 @@ interface ButtonProps {
    * Размер кнопки
    */
   size?: TButtonSize;
+  /**
+   * Признак иконки
+   */
   icon?: boolean;
 }
 
-export type TButtonType = 'primary' | 'secondary' | 'danger' | 'success' | 'disabled' | 'icon';
-export type TButtonSize = 'small' | 'medium' | 'large';
+type TButtonType = 'primary' | 'secondary' | 'danger' | 'success' | 'disabled' | 'icon';
+type TButtonSize = 'small' | 'medium' | 'large';
+
 /**
  * Базовый UI компонент-кнопка
  */
 
-export const Button: FC<PropsWithChildren<ButtonProps>> = ({
+export const Button: FC<PropsWithChildren<IButtonProps>> = ({
   children,
   type = 'primary',
   size = 'medium',
   icon = false,
-}) => {
-  return (
-    <button className={cn('button', `${icon ? 'button--icon' : ''}`, `button--${type}`, `button--${size}`)}>
-      <span className="button--inner">{children}</span>
-    </button>
-  );
-};
+}) => (
+  <button className={cn('button', `${icon ? 'button--icon' : ''}`, `button--${type}`, `button--${size}`)}>
+    <span className="button--inner">{children}</span>
+  </button>
+);
