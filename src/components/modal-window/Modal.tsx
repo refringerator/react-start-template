@@ -1,8 +1,11 @@
 import { FC, PropsWithChildren } from 'react';
-import './modal.css';
 import { Button } from '../button/Button';
+import './modal.css';
 
 interface ModalProps {
+  /**
+   * Видимость окна
+   */
   visible: boolean;
 }
 

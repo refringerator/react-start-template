@@ -9,17 +9,9 @@ const meta: Meta<typeof Modal> = {
 export default meta;
 
 export const VisibleWindow = {
-  name: 'Видимое модальное окно',
+  name: 'Модальное окно',
   args: {
     visible: true,
     children: 'Видимое окно',
-  },
-};
-
-export const InvisibleWindow = {
-  name: 'Скрытое модальное окно',
-  args: {
-    visible: false,
-    children: 'Меня нет',
   },
 };
