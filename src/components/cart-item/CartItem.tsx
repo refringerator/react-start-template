@@ -1,28 +1,44 @@
 import { FC, PropsWithChildren } from 'react';
 import { Button } from '../button/Button';
+import { CartButton } from '../cart-button/CartButton';
 import './cart-item.css';
 
-interface CartButtonProps {
-  icon?: boolean;
-  type?: string;
+interface CartItemProps {
+  /**
+   * Цена товара
+   */
   price: number;
+  /**
+   * Старая цена
+   */
   priceOld: number;
+  /**
+   * Описание
+   */
   description: string;
+  /**
+   * Ссылка на изображение
+   */
   imageUrl: string;
+  /**
+   * Наименование
+   */
   name: string;
+  /**
+   * Категория товара
+   */
   categoryName: string;
 }
 
-export const CartItem: FC<PropsWithChildren<CartButtonProps>> = ({
+export const CartItem: FC<PropsWithChildren<CartItemProps>> = ({
   imageUrl,
   name,
   categoryName,
   description,
   price,
   priceOld,
-  type = 'default',
 }) => (
-  <div className={`cart-item cart-item--${type}`}>
+  <div className={'cart-item'}>
     <div className="cart-item--inner">
       <div className="cart-item--images">
         <div className="cart-item--image" style={{ backgroundImage: 'url(' + imageUrl + ')' }}></div>
