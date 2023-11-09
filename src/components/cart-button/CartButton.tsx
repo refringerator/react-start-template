@@ -1,15 +1,15 @@
 import { FC, PropsWithChildren } from 'react';
-import { Button, IButtonProps } from '../button/Button';
+import { Button, ButtonProps } from '../button/Button';
 import './cart-button.css';
 
-interface ICartButtonProps extends IButtonProps {
+interface CartButtonProps extends ButtonProps {
   /**
    * Количество в корзине
    */
   count: number;
 }
 
-export const CartButton: FC<PropsWithChildren<ICartButtonProps>> = ({ children, icon, size, type, count }) => {
+export const CartButton: FC<PropsWithChildren<CartButtonProps>> = ({ children, icon, size, type, count }) => {
   return count ? (
     <div className="cart--button__counter">
       <Button icon={true}>&#60;</Button>

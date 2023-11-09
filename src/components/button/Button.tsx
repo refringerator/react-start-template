@@ -2,7 +2,7 @@ import cn from 'clsx';
 import { FC, PropsWithChildren } from 'react';
 import './button.css';
 
-export interface IButtonProps {
+export interface ButtonProps {
   /**
    * Тип кнопки
    */
@@ -24,7 +24,7 @@ type TButtonSize = 'small' | 'medium' | 'large';
  * Базовый UI компонент-кнопка
  */
 
-export const Button: FC<PropsWithChildren<IButtonProps>> = ({
+export const Button: FC<PropsWithChildren<ButtonProps>> = ({
   children,
   type = 'primary',
   size = 'medium',
