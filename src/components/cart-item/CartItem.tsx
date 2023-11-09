@@ -2,7 +2,7 @@ import { FC, PropsWithChildren } from 'react';
 import { Button } from '../button/Button';
 import './cart-item.css';
 
-interface CartItemProps {
+export interface CartItemProps {
   /**
    * Цена товара
    */

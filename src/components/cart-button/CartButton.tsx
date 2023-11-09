@@ -2,7 +2,7 @@ import { FC, PropsWithChildren } from 'react';
 import { Button, ButtonProps } from '../button/Button';
 import './cart-button.css';
 
-interface CartButtonProps extends ButtonProps {
+export interface CartButtonProps extends ButtonProps {
   /**
    * Количество в корзине
    */
