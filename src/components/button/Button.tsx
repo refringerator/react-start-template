@@ -24,6 +24,18 @@ type TButtonSize = 'small' | 'medium' | 'large';
  * Базовый UI компонент-кнопка
  */
 
+import styled from 'styled-components';
+import theme from 'styled-theming';
+
+const bg = theme('mode', {
+  ocean: '#fff',
+  forest: '#000',
+});
+
+const Span = styled.span`
+  background-color: ${bg};
+`;
+
 export const Button: FC<PropsWithChildren<ButtonProps>> = ({
   children,
   type = 'primary',
@@ -31,6 +43,6 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
   icon = false,
 }) => (
   <button className={cn('button', `${icon ? 'button--icon' : ''}`, `button--${type}`, `button--${size}`)}>
-    <span className="button--inner">{children}</span>
+    <Span>{children}</Span>
   </button>
 );
