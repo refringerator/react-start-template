@@ -1,3 +1,5 @@
+// TODO: выпилить addon-themes и темы
+
 const config = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
@@ -5,7 +7,7 @@ const config = {
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     '@storybook/addon-themes',
-    '@storybook/themes'
+    '@storybook/themes',
   ],
   framework: {
     name: '@storybook/react-webpack5',
