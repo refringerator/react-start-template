@@ -1,7 +1,5 @@
-import cn from 'clsx';
 import { FC, PropsWithChildren } from 'react';
 import { StyledButton, Span } from './styles';
-// import './button.css';
 
 export interface ButtonProps {
   /**
@@ -31,7 +29,7 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
   size = 'medium',
   icon = false,
 }) => (
-  <StyledButton type={type} className={cn(`${icon ? 'button--icon' : ''}`, `button--${type}`, `button--${size}`)}>
+  <StyledButton type={type} size={size}>
     <Span>{children}</Span>
   </StyledButton>
 );

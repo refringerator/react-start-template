@@ -1,71 +1,74 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import theme from 'styled-theming';
-import { TButtonType } from './Button';
-
-const bg = theme('mode', {
-  ocean: '#fff',
-  forest: '#000',
-});
+import { TButtonType, TButtonSize } from './Button';
 
 const backgroundColor = theme.variants('mode', 'type', {
-  primary: { ocean: '#3977ad', forest: 'darkblue' },
-  secondary: { ocean: '#f0f0f5', forest: 'darkblue' },
-  success: { ocean: '#6cbd7d', forest: 'darkgreen' },
-  danger: { ocean: '#fe3266', forest: 'darkorange' },
-  disabled: { ocean: '#e1e4eb', forest: 'darkgray' },
+  primary: { ocean: '#3977ad', forest: '#739072' },
+  secondary: { ocean: '#f0f0f5', forest: '#A0A698' },
+  danger: { ocean: '#fe3266', forest: '#fe3266' },
+  success: { ocean: '#6cbd7d', forest: '#4F6F52' },
+  disabled: { ocean: '#e1e4eb', forest: '#A0A698' },
   icon: { ocean: 'none', forest: 'none' },
 });
 
-// const backgroundColor = theme('type', {
-//   primary: '#3977ad',
-//   secondary: '#f0f0f5',
-//   success: '#6cbd7d',
-//   danger: '#fe3266',
-//   disabled: '#e1e4eb',
-// });
+const color = theme.variants('mode', 'type', {
+  primary: { ocean: 'white', forest: '#070D06' },
+  secondary: { ocean: '#828894', forest: '#182612' },
+  success: { ocean: '#white', forest: '#070D06' },
+  danger: { ocean: 'white', forest: '#182612' },
+  disabled: { ocean: '#b2b7c2', forest: '#070D06' },
+  icon: { ocean: 'inherit', forest: 'inherit' },
+});
 
 export const Span = styled.span``;
 
-export const StyledButton = styled.button<{ type?: TButtonType }>`
+export const StyledButton = styled.button<{ type?: TButtonType; size?: TButtonSize }>`
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: ${color || 'inherit'};
+  background: ${backgroundColor || 'none'};
   border: 0;
-  color: inherit;
   border-radius: 2px;
   cursor: pointer;
-  background: ${backgroundColor || 'none'};
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
   transition: all 0.2s ease;
 
+  ${(props) => {
+    switch (props.size) {
+      case 'small':
+        return css`
+          font-size: 12px;
+          padding: 10px 16px;
+        `;
+      case 'medium':
+        return css`
+          font-size: 14px;
+          padding: 11px 20px;
+        `;
+      case 'large':
+        return css`
+          font-size: 16px;
+          padding: 12px 24px;
+        `;
+    }
+  }}
+
+  ${(props) =>
+    props.type == 'disabled' &&
+    css`
+      box-shadow: none;
+      cursor: default;
+    `}
+  
+  ${(props) =>
+    props.type == 'icon' &&
+    css`
+      box-shadow: none;
+      &:hover {
+        opacity: 0.7;
+      }
+    `}
+    
   &:hover {
     box-shadow: none;
   }
 `;
-
-// StyledButton.propTypes = {
-//   variant: PropTypes.oneOf(['default', 'primary', 'success', 'warning']),
-// };
-//   .button--primary {
-//     color: white;
-//     background-color: #3977ad;
-//   }
-
-//   .button--secondary {
-//     color: #828894;
-//     background: #f0f0f5;
-//   }
-
-//   .button--success {
-//     color: white;
-//     background: #6cbd7d;
-//   }
-
-//   .button--danger {
-//     color: white;
-//     background: #fe3266;
-//   }
-//   .button--disabled {
-//     color: #b2b7c2;
-//     background: #e1e4eb;
-//     box-shadow: none;
-//     cursor: default;
-//   }
