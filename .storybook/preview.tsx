@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components';
 const withThemeProvider = (Story, context) => {
   const theme = context.globals.theme;
   return (
-    <ThemeProvider theme={{ mode: theme }}>
+    <ThemeProvider theme={{ mode: theme || 'ocean' }}>
       <Story />
     </ThemeProvider>
   );
