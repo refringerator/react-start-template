@@ -25,7 +25,7 @@ export const Icon = {
   args: {
     children: 'Я просто значек',
     icon: true,
-    type: 'danger',
+    type: 'icon',
     size: 'medium',
   },
 };

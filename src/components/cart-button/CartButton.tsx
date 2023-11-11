@@ -1,6 +1,18 @@
 import { FC, PropsWithChildren } from 'react';
 import { Button, ButtonProps } from '../button/Button';
-import './cart-button.css';
+import styled from 'styled-components';
+
+const StyledInput = styled.input`
+  border: none;
+  outline: none;
+  max-width: 50px;
+  text-align: center;
+  border-bottom: 2px solid #e1e4eb;
+`;
+
+const StyledCounter = styled.div`
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+`;
 
 export interface CartButtonProps extends ButtonProps {
   /**
@@ -11,13 +23,13 @@ export interface CartButtonProps extends ButtonProps {
 
 export const CartButton: FC<PropsWithChildren<CartButtonProps>> = ({ children, icon, size, type, count }) => {
   return count ? (
-    <div className="cart--button__counter">
-      <Button icon={true}>&#60;</Button>
-      <input className="cart--button__input" value={count}></input>
-      <Button icon={true}>&#62;</Button>
-    </div>
+    <StyledCounter>
+      <Button type={'icon'}>&#60;</Button>
+      <StyledInput value={count} />
+      <Button type={'icon'}>&#62;</Button>
+    </StyledCounter>
   ) : (
-    <Button type={type} size={size} icon={icon}>
+    <Button type={type} size={size}>
       {children}
     </Button>
   );
