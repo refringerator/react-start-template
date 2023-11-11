@@ -1,6 +1,7 @@
 import cn from 'clsx';
 import { FC, PropsWithChildren } from 'react';
-import './button.css';
+import { StyledButton, Span } from './styles';
+// import './button.css';
 
 export interface ButtonProps {
   /**
@@ -17,24 +18,12 @@ export interface ButtonProps {
   icon?: boolean;
 }
 
-type TButtonType = 'primary' | 'secondary' | 'danger' | 'success' | 'disabled' | 'icon';
-type TButtonSize = 'small' | 'medium' | 'large';
+export type TButtonType = 'primary' | 'secondary' | 'danger' | 'success' | 'disabled' | 'icon';
+export type TButtonSize = 'small' | 'medium' | 'large';
 
 /**
  * Базовый UI компонент-кнопка
  */
-
-import styled from 'styled-components';
-import theme from 'styled-theming';
-
-const bg = theme('mode', {
-  ocean: '#fff',
-  forest: '#000',
-});
-
-const Span = styled.span`
-  background-color: ${bg};
-`;
 
 export const Button: FC<PropsWithChildren<ButtonProps>> = ({
   children,
@@ -42,7 +31,7 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
   size = 'medium',
   icon = false,
 }) => (
-  <button className={cn('button', `${icon ? 'button--icon' : ''}`, `button--${type}`, `button--${size}`)}>
+  <StyledButton type={type} className={cn(`${icon ? 'button--icon' : ''}`, `button--${type}`, `button--${size}`)}>
     <Span>{children}</Span>
-  </button>
+  </StyledButton>
 );
