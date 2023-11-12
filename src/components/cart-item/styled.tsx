@@ -1,5 +1,5 @@
 import theme from 'styled-theming';
-import styled from 'styled-components';
+import { styled } from 'styled-components';
 
 const itemBackgroundColor = theme('mode', {
   ocean: '#3977ad',
