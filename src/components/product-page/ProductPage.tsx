@@ -1,7 +1,20 @@
 import { FC, PropsWithChildren } from 'react';
 import { CartButton } from '../cart-button/CartButton';
 import { ProductCardProps } from '../product-card/ProductCard';
-import './product-page.css';
+import {
+  Page,
+  PageCategory,
+  PageContent,
+  PageDescription,
+  PageFooter,
+  PageImage,
+  PageImages,
+  PageInner,
+  PageName,
+  PagePrice,
+  PagePriceOld,
+  PagePriceWrapper,
+} from './styled';
 
 interface ProductPageProps extends Omit<ProductCardProps, 'imageUrl'> {
   imageUrls: [string];
@@ -14,31 +27,31 @@ export const ProductPage: FC<PropsWithChildren<ProductPageProps>> = ({
   description,
   price,
   priceOld,
-  cardType = 'default',
+  // TODO: нужно ли тут? cardType = 'default',
 }) => (
-  <div className={`page page--${cardType}`}>
-    <div className="page--inner">
-      <div className="page--images">
+  <Page>
+    <PageInner>
+      <PageImages>
         {imageUrls.map((url, index) => (
-          <div className="page--image" style={{ backgroundImage: 'url(' + url + ')' }} key={index}></div>
+          <PageImage style={{ backgroundImage: 'url(' + url + ')' }} key={index}></PageImage>
         ))}
-      </div>
-      <div className="page--content">
-        <span className="page--category">{categoryName}</span>
+      </PageImages>
+      <PageContent>
+        <PageCategory>{categoryName}</PageCategory>
         <div>
-          <h2 className="page--name">{name}</h2>
-          <p className="page--description">{description}</p>
+          <PageName>{name}</PageName>
+          <PageDescription>{description}</PageDescription>
         </div>
-        <div className="page--footer">
-          <div className="page--price__wrapper">
-            <div className="page--price">{price}&#32;руб.</div>
-            <div className="page--price__old">{priceOld}&#32;руб.</div>
-          </div>
+        <PageFooter>
+          <PagePriceWrapper>
+            <PagePrice>{price}&#32;руб.</PagePrice>
+            <PagePriceOld>{priceOld}&#32;руб.</PagePriceOld>
+          </PagePriceWrapper>
           <CartButton type="disabled" count={0}>
             В корзину
           </CartButton>
-        </div>
-      </div>
-    </div>
-  </div>
+        </PageFooter>
+      </PageContent>
+    </PageInner>
+  </Page>
 );
