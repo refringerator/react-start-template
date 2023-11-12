@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Preview } from '@storybook/react';
 import i18n from './i18next';
 import { ThemeProvider } from 'styled-components';
