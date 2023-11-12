@@ -1,5 +1,5 @@
 import type { Preview } from '@storybook/react';
-
+import i18n from './i18next';
 import { ThemeProvider } from 'styled-components';
 
 const withThemeProvider = (Story, context) => {
@@ -12,6 +12,13 @@ const withThemeProvider = (Story, context) => {
 };
 
 const preview: Preview = {
+  globals: {
+    locale: 'en',
+    locales: {
+      en: { title: 'English', left: '🇺🇸' },
+      ru: { title: 'Russian', left: '🇷🇺' },
+    },
+  },
   globalTypes: {
     theme: {
       description: 'Global theme for components',
@@ -31,6 +38,7 @@ const preview: Preview = {
     },
   },
   parameters: {
+    i18n,
     actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
       matchers: {

@@ -8,6 +8,7 @@ const config = {
     '@storybook/addon-interactions',
     '@storybook/addon-themes',
     '@storybook/themes',
+    'storybook-react-i18next',
   ],
   framework: {
     name: '@storybook/react-webpack5',
