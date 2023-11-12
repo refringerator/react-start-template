@@ -9,6 +9,8 @@
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 9999;
   animation: show 0.4s forwards;
+  top: 0;
+  left: 0;
 }
 
 .modal--body {
