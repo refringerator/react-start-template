@@ -10,10 +10,6 @@ export interface ButtonProps {
    * Размер кнопки
    */
   size?: TButtonSize;
-  /**
-   * Признак иконки
-   */
-  icon?: boolean;
 }
 
 export type TButtonType = 'primary' | 'secondary' | 'danger' | 'success' | 'disabled' | 'icon';
@@ -23,12 +19,7 @@ export type TButtonSize = 'small' | 'medium' | 'large';
  * Базовый UI компонент-кнопка
  */
 
-export const Button: FC<PropsWithChildren<ButtonProps>> = ({
-  children,
-  type = 'primary',
-  size = 'medium',
-  icon = false,
-}) => (
+export const Button: FC<PropsWithChildren<ButtonProps>> = ({ children, type = 'primary', size = 'medium' }) => (
   <StyledButton type={type} size={size}>
     <Span>{children}</Span>
   </StyledButton>

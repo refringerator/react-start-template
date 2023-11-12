@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import LogoSvg from '../../logo.svg';
-import styled from 'styled-components';
+import { styled } from 'styled-components';
 import theme from 'styled-theming';
 
 const filter = theme('mode', {

@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren } from 'react';
 import { Button, ButtonProps } from '../button/Button';
-import styled from 'styled-components';
+import { styled } from 'styled-components';
 
 const StyledInput = styled.input`
   border: none;
@@ -21,7 +21,7 @@ export interface CartButtonProps extends ButtonProps {
   count: number;
 }
 
-export const CartButton: FC<PropsWithChildren<CartButtonProps>> = ({ children, icon, size, type, count }) => {
+export const CartButton: FC<PropsWithChildren<CartButtonProps>> = ({ children, size, type, count }) => {
   return count ? (
     <StyledCounter>
       <Button type={'icon'}>&#60;</Button>

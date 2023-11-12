@@ -14,7 +14,6 @@ export const DefaultButton = {
   name: 'Обычная кнопка',
   args: {
     children: 'Нажми на меня ;)',
-    icon: false,
     type: 'primary',
     size: 'medium',
   },
@@ -24,7 +23,6 @@ export const Icon = {
   name: 'Значек',
   args: {
     children: 'Я просто значек',
-    icon: true,
     type: 'icon',
     size: 'medium',
   },

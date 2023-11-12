@@ -1,7 +1,6 @@
 import { FC, PropsWithChildren } from 'react';
 import { CartButton, CartButtonProps } from '../cart-button/CartButton';
 import { CartItemProps } from '../cart-item/CartItem';
-import './product-card.css';
 import {
   Card,
   CardCategory,

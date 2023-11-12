@@ -1,5 +1,5 @@
 import React, { FC, PropsWithChildren } from 'react';
-import styled, { css } from 'styled-components';
+import { styled, css } from 'styled-components';
 import theme from 'styled-theming';
 
 const layoutTextBackgroundColor = theme('mode', {
