@@ -1,0 +1,4 @@
+.logo--inner__img {
+  transition: width 0.2s ease;
+  width: 72px;
+}
