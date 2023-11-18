@@ -2,28 +2,16 @@ import type { Meta } from '@storybook/react';
 import { CartItem } from './CartItem';
 
 const meta: Meta<typeof CartItem> = {
-  title: 'Общее/Товар в корзине',
+  title: 'Элементы магазина/Товар в корзине',
   component: CartItem,
   tags: ['autodocs'],
-
-  argTypes: {
-    type: {
-      type: 'string',
-      description: 'Button type',
-      defaultValue: 'default',
-      options: ['default', 'disabled'],
-      control: {
-        type: 'select',
-      },
-    },
-  },
 };
 
 export default meta;
 
-export const DefaultButton = {
+export const ReactCart = {
+  name: 'Продается React',
   args: {
-    type: 'default',
     categoryName: 'Программирование',
     name: 'React.js Developer',
     price: '80000',

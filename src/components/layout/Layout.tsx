@@ -2,6 +2,9 @@ import React, { FC, PropsWithChildren } from 'react';
 import './layout.css';
 
 interface LayoutProps {
+  /**
+   * Шапка страницы
+   */
   header: React.ReactNode;
 }
 

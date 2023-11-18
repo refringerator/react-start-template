@@ -8,6 +8,7 @@
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
   transition: all 0.2s ease;
 }
+
 .button:hover {
   box-shadow: none;
 }
@@ -16,14 +17,17 @@
   color: white;
   background-color: #3977ad;
 }
+
 .button--secondary {
   color: #828894;
   background: #f0f0f5;
 }
+
 .button--success {
   color: white;
   background: #6cbd7d;
 }
+
 .button--danger {
   color: white;
   background: #fe3266;

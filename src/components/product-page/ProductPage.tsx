@@ -1,17 +1,10 @@
 import { FC, PropsWithChildren } from 'react';
 import { CartButton } from '../cart-button/CartButton';
+import { ProductCardProps } from '../product-card/ProductCard';
 import './product-page.css';
 
-interface ProductPageProps {
-  icon?: boolean;
-  type?: string;
-  size?: string;
-  price: number;
-  priceOld: number;
-  description: string;
+interface ProductPageProps extends Omit<ProductCardProps, 'imageUrl'> {
   imageUrls: [string];
-  name: string;
-  categoryName: string;
 }
 
 export const ProductPage: FC<PropsWithChildren<ProductPageProps>> = ({
@@ -21,9 +14,9 @@ export const ProductPage: FC<PropsWithChildren<ProductPageProps>> = ({
   description,
   price,
   priceOld,
-  type = 'default',
+  cardType = 'default',
 }) => (
-  <div className={`page page--${type}`}>
+  <div className={`page page--${cardType}`}>
     <div className="page--inner">
       <div className="page--images">
         {imageUrls.map((url, index) => (
