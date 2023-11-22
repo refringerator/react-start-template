@@ -1,6 +1,6 @@
-import type { Meta, StoryFn } from '@storybook/react';
+import type { Meta } from '@storybook/react';
 import { Header } from './Header';
-import { MediumLogo } from '../logo/logo.stories';
+import { Switch } from '../switch/Switch';
 
 const meta: Meta<typeof Header> = {
   title: 'Общее/Шапка(header)',
@@ -9,8 +9,15 @@ const meta: Meta<typeof Header> = {
 
 export default meta;
 
-const Template: StoryFn<typeof Header> = (args) => <Header {...args} />;
-
-export const HeaderWithLogo = Template.bind({});
-HeaderWithLogo.storyName = 'Шапка(header)';
-HeaderWithLogo.args = { children: <MediumLogo /> };
+export const HeaderWithLogoAndSwitcher = {
+  name: 'Шапка(header)',
+  args: {
+    menu: 'Место для меню',
+    children: (
+      <>
+        <Switch />
+        <Switch />
+      </>
+    ),
+  },
+};

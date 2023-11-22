@@ -1,7 +1,7 @@
 import type { Meta, StoryFn } from '@storybook/react';
 import { Layout } from './Layout';
 import { Header } from '../header/Header';
-import { Logo } from '../logo/Logo';
+import { Switch } from '../switch/Switch';
 
 const meta: Meta<typeof Layout> = {
   title: 'Общее/Каркас(layout)',
@@ -17,8 +17,11 @@ LayoutWithHeader.storyName = 'Каркас(layout)';
 LayoutWithHeader.args = {
   children: <p>Содержимое страницы</p>,
   header: (
-    <Header>
-      <Logo />
-    </Header>
+    <>
+      <Header>
+        <Switch />
+        <Switch />
+      </Header>
+    </>
   ),
 };

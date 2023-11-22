@@ -26,8 +26,9 @@ const StyledLayout = styled.div`
 interface LayoutProps {
   /**
    * Шапка страницы
+   * Возможно, есть смысл убрать хэдер
    */
-  header: React.ReactNode;
+  header?: React.ReactNode;
 }
 
 export const Layout: FC<PropsWithChildren<LayoutProps>> = ({ header, children }) => (
