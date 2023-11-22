@@ -1,11 +1,16 @@
-// import { initReactI18next } from 'react-i18next';
-// import i18n from 'i18next';
-// import Backend from 'i18next-http-backend';
-// import LanguageDetector from 'i18next-browser-languagedetector';
+import { initReactI18next } from 'react-i18next';
+import i18n from 'i18next';
+import Backend from 'i18next-http-backend';
+import LanguageDetector from 'i18next-browser-languagedetector';
 
-// const ns = ['common'];
-// const supportedLngs = ['en', 'ru'];
-// const resources = ns.reduce((acc, n) => {
+const ns = ['common'];
+const supportedLngs = ['en', 'ru'];
+const resources = {
+  en: require(`../src/locales/en/common.json`),
+  ru: require(`../src/locales/ru/common.json`),
+};
+
+// ns.reduce((acc: Record<string>, n) => {
 //   supportedLngs.forEach((lng) => {
 //     if (!acc[lng]) acc[lng] = {};
 //     acc[lng] = {
@@ -16,20 +21,20 @@
 //   return acc;
 // }, {});
 
-// i18n
-//   .use(initReactI18next)
-//   .use(LanguageDetector)
-//   .use(Backend)
-//   .init({
-//     //debug: true,
-//     lng: 'ru',
-//     fallbackLng: 'ru',
-//     defaultNS: 'common',
-//     ns,
-//     interpolation: { escapeValue: false },
-//     react: { useSuspense: false },
-//     supportedLngs,
-//     resources,
-//   });
+i18n
+  .use(initReactI18next)
+  .use(LanguageDetector)
+  .use(Backend)
+  .init({
+    //debug: true,
+    lng: 'ru',
+    fallbackLng: 'ru',
+    defaultNS: 'common',
+    ns,
+    interpolation: { escapeValue: false },
+    react: { useSuspense: false },
+    supportedLngs,
+    resources,
+  });
 
-// export default i18n;
+export default i18n;
