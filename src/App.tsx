@@ -1,16 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Layout } from './components/layout/Layout';
+import { Header } from './components/header/Header';
+import { Logo } from './components/logo/Logo';
+import { Switch } from './components/switch/Switch';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-      </header>
+      <Layout
+        header={
+          <Header>
+            <Logo />
+            <Switch />
+          </Header>
+        }
+      >
+        <p>Я пример приложения</p>
+      </Layout>
     </div>
   );
 }

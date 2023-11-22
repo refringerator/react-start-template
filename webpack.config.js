@@ -4,6 +4,8 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const webpack = require('webpack');
+
 const port = 2233;
 const dist = path.join(__dirname, 'dist');
 const src = path.join(__dirname, 'src');
@@ -98,6 +100,9 @@ module.exports = (_, args) => {
         typescript: {
           configFile: path.join(__dirname, 'tsconfig.json'),
         },
+      }),
+      new webpack.ProvidePlugin({
+        React: 'react',
       }),
     ],
   };
