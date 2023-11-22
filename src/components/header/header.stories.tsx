@@ -1,6 +1,8 @@
 import type { Meta } from '@storybook/react';
-import { Header } from './Header';
+import { languageOptions } from '../../locales/langueages';
+import { Select } from '../select/Select';
 import { Switch } from '../switch/Switch';
+import { Header } from './Header';
 
 const meta: Meta<typeof Header> = {
   title: 'Общее/Шапка(header)',
@@ -16,7 +18,7 @@ export const HeaderWithLogoAndSwitcher = {
     children: (
       <>
         <Switch />
-        <Switch />
+        <Select options={languageOptions} />
       </>
     ),
   },

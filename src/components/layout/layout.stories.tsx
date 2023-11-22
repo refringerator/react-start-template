@@ -1,7 +1,9 @@
 import type { Meta, StoryFn } from '@storybook/react';
-import { Layout } from './Layout';
+import { languageOptions } from '../../locales/langueages';
 import { Header } from '../header/Header';
+import { Select } from '../select/Select';
 import { Switch } from '../switch/Switch';
+import { Layout } from './Layout';
 
 const meta: Meta<typeof Layout> = {
   title: 'Общее/Каркас(layout)',
@@ -20,7 +22,7 @@ LayoutWithHeader.args = {
     <>
       <Header>
         <Switch />
-        <Switch />
+        <Select options={languageOptions} />
       </Header>
     </>
   ),

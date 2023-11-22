@@ -1,9 +1,11 @@
-import './App.css';
-import { Layout } from './components/layout/Layout';
-import { Header } from './components/header/Header';
-import { Switch } from './components/switch/Switch';
-import { ThemeProvider } from 'styled-components';
 import { useState } from 'react';
+import { ThemeProvider } from 'styled-components';
+import './App.css';
+import { Header } from './components/header/Header';
+import { Layout } from './components/layout/Layout';
+import { Select } from './components/select/Select';
+import { Switch } from './components/switch/Switch';
+import { languageOptions } from './locales/langueages';
 
 type TTheme = 'ocean' | 'forest';
 const defaultTheme: TTheme = 'ocean';
@@ -23,7 +25,7 @@ function App() {
           header={
             <Header>
               <Switch onChange={HandleThemeChange} switched={themeName !== defaultTheme} />
-              <Switch />
+              <Select options={languageOptions} />
             </Header>
           }
         >
