@@ -6,8 +6,8 @@ import { initReactI18next } from 'react-i18next';
 const ns = ['common'];
 const supportedLngs = ['en', 'ru'];
 const resources = {
-  en: require(`../src/locales/en/common.json`),
-  ru: require(`../src/locales/ru/common.json`),
+  en: require(`./locales/en/common.json`),
+  ru: require(`./locales/ru/common.json`),
 };
 
 // ns.reduce((acc: Record<string>, n) => {
@@ -22,9 +22,9 @@ const resources = {
 // }, {});
 
 i18n
-  .use(initReactI18next)
-  .use(LanguageDetector)
   .use(Backend)
+  .use(LanguageDetector)
+  .use(initReactI18next)
   .init({
     //debug: true,
     lng: 'ru',
