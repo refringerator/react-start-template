@@ -5,34 +5,30 @@ import { initReactI18next } from 'react-i18next';
 
 const ns = ['common'];
 const supportedLngs = ['en', 'ru'];
-const resources = {
-  en: require(`./locales/en/common.json`),
-  ru: require(`./locales/ru/common.json`),
-};
 
-// ns.reduce((acc: Record<string>, n) => {
-//   supportedLngs.forEach((lng) => {
-//     if (!acc[lng]) acc[lng] = {};
-//     acc[lng] = {
-//       ...acc[lng],
-//       [n]: require(`../src/locales/${lng}/${n}.json`),
-//     };
-//   });
-//   return acc;
-// }, {});
+const resources = ns.reduce((acc, n) => {
+  supportedLngs.forEach((lng) => {
+    if (!acc[lng]) acc[lng] = {};
+    acc[lng] = {
+      ...acc[lng],
+      [n]: require(`../src/locales/${lng}/${n}.json`),
+    };
+  });
+  return acc;
+}, {});
 
 i18n
   .use(Backend)
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    //debug: true,
+    debug: true,
     lng: 'ru',
     fallbackLng: 'ru',
     defaultNS: 'common',
     ns,
     interpolation: { escapeValue: false },
-    react: { useSuspense: false },
+    // react: { useSuspense: false },
     supportedLngs,
     resources,
   });

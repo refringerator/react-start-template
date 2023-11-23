@@ -3,6 +3,7 @@ import { languageOptions } from '../../locales/langueages';
 import { Select } from '../select/Select';
 import { Switch } from '../switch/Switch';
 import { Header } from './Header';
+import TextTranslated from '../simle-text/Text';
 
 const meta: Meta<typeof Header> = {
   title: 'Общее/Шапка(header)',
@@ -14,7 +15,7 @@ export default meta;
 export const HeaderWithLogoAndSwitcher = {
   name: 'Шапка(header)',
   args: {
-    menu: 'Место для меню',
+    menu: <TextTranslated />,
     children: (
       <>
         <Switch />

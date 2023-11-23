@@ -14,7 +14,7 @@ const withThemeProvider = (Story, context) => {
 
 const preview: Preview = {
   globals: {
-    locale: 'en',
+    locale: 'ru',
     locales: {
       en: { title: 'English', left: '🇺🇸' },
       ru: { title: 'Russian', left: '🇷🇺' },
