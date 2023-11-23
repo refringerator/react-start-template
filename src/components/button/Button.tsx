@@ -1,6 +1,5 @@
-import cn from 'clsx';
 import { FC, PropsWithChildren } from 'react';
-import './button.css';
+import { StyledButton, Span } from './styles';
 
 export interface ButtonProps {
   /**
@@ -11,14 +10,12 @@ export interface ButtonProps {
    * Размер кнопки
    */
   size?: TButtonSize;
-  /**
-   * Признак иконки
-   */
-  icon?: boolean;
+
+  onClick?: () => void;
 }
 
-type TButtonType = 'primary' | 'secondary' | 'danger' | 'success' | 'disabled' | 'icon';
-type TButtonSize = 'small' | 'medium' | 'large';
+export type TButtonType = 'primary' | 'secondary' | 'danger' | 'success' | 'disabled' | 'icon';
+export type TButtonSize = 'small' | 'medium' | 'large';
 
 /**
  * Базовый UI компонент-кнопка
@@ -28,9 +25,9 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
   children,
   type = 'primary',
   size = 'medium',
-  icon = false,
+  onClick,
 }) => (
-  <button className={cn('button', `${icon ? 'button--icon' : ''}`, `button--${type}`, `button--${size}`)}>
-    <span className="button--inner">{children}</span>
-  </button>
+  <StyledButton type={type} size={size} onClick={onClick}>
+    <Span>{children}</Span>
+  </StyledButton>
 );

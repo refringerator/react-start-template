@@ -1,7 +1,19 @@
 import { FC, PropsWithChildren } from 'react';
 import { CartButton, CartButtonProps } from '../cart-button/CartButton';
 import { CartItemProps } from '../cart-item/CartItem';
-import './product-card.css';
+import {
+  Card,
+  CardCategory,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardImage,
+  CardImageWrapper,
+  CardInner,
+  CardName,
+  CardPrice,
+  CardPriceOld,
+} from './styled';
 
 export interface ProductCardProps extends CartItemProps, CartButtonProps {
   cardType?: TCardType;
@@ -18,25 +30,25 @@ export const ProductCard: FC<PropsWithChildren<ProductCardProps>> = ({
   priceOld,
   cardType = 'default',
 }) => (
-  <div className={`card card--${cardType}`}>
-    <div className="card--inner">
-      <div className="card--image__wrapper">
-        <img className="card--image" src={imageUrl} alt={name} />
-      </div>
-      <div className="card--content">
-        <span className="card--category">{categoryName}</span>
-        <h2 className="card--name">{name}</h2>
-        <p className="card--description">{description}</p>
-        <div className="card--footer">
+  <Card cardType={cardType}>
+    <CardInner>
+      <CardImageWrapper cardType={cardType}>
+        <CardImage src={imageUrl} alt={name} />
+      </CardImageWrapper>
+      <CardContent>
+        <CardCategory>{categoryName}</CardCategory>
+        <CardName>{name}</CardName>
+        <CardDescription>{description}</CardDescription>
+        <CardFooter>
           <div className="card--price__wrapper">
-            <div className="card--price">{price}&#32;руб.</div>
-            <div className="card--price__old">{priceOld}&#32;руб.</div>
+            <CardPrice>{price}&#32;руб.</CardPrice>
+            <CardPriceOld>{priceOld}&#32;руб.</CardPriceOld>
           </div>
           <CartButton type="disabled" count={0}>
             В корзину
           </CartButton>
-        </div>
-      </div>
-    </div>
-  </div>
+        </CardFooter>
+      </CardContent>
+    </CardInner>
+  </Card>
 );

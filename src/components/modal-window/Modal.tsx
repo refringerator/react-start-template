@@ -7,15 +7,18 @@ interface ModalProps {
    * Видимость окна
    */
   visible: boolean;
+  closeModal?: () => void;
 }
 
-export const Modal: FC<PropsWithChildren<ModalProps>> = ({ visible, children }) =>
+export const Modal: FC<PropsWithChildren<ModalProps>> = ({ visible, children, closeModal }) =>
   visible && (
     <div className="modal">
       <div className="modal--body">
         <div className="modal--body_text-container">{children}</div>
         <div className="modal--close">
-          <Button type="icon">&#120;</Button>
+          <Button onClick={closeModal} type="icon">
+            &#120;
+          </Button>
         </div>
       </div>
     </div>

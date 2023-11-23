@@ -4,13 +4,13 @@ import { ProductPage } from './ProductPage';
 const meta: Meta<typeof ProductPage> = {
   title: '"Элементы магазина"/Страница товара',
   component: ProductPage,
-  argTypes: {
-    type: {
-      control: {
-        type: 'inline-radio',
-      },
-    },
-  },
+  // argTypes: {
+  //   type: {
+  //     control: {
+  //       type: 'inline-radio',
+  //     },
+  //   },
+  // },
 };
 
 export default meta;
@@ -18,7 +18,7 @@ export default meta;
 export const DefaultButton = {
   name: 'Заполненная страница',
   args: {
-    type: 'default',
+    // type: 'default',
     categoryName: 'Программирование',
     name: 'React.js Developer',
     price: '80000',
