@@ -30,9 +30,9 @@ export const ProductCard: FC<PropsWithChildren<ProductCardProps>> = ({
   priceOld,
   cardType = 'default',
 }) => (
-  <Card cardType={cardType}>
+  <Card $cardType={cardType}>
     <CardInner>
-      <CardImageWrapper cardType={cardType}>
+      <CardImageWrapper $cardType={cardType}>
         <CardImage src={imageUrl} alt={name} />
       </CardImageWrapper>
       <CardContent>

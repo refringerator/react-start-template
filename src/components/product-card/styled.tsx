@@ -11,7 +11,7 @@ const cardColor = theme('mode', {
   forest: '#070D06',
 });
 
-export const Card = styled.div<{ cardType?: TCardType }>`
+export const Card = styled.div<{ $cardType?: TCardType }>`
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   width: 320px;
   background: ${cardBackgroundColor};
@@ -25,7 +25,7 @@ export const Card = styled.div<{ cardType?: TCardType }>`
   }
 
   ${(props) =>
-    props.cardType == 'disabled' &&
+    props.$cardType == 'disabled' &&
     css`
       color: #b2b7c2;
       background: #e1e4eb;
@@ -41,13 +41,13 @@ export const CardInner = styled.div`
   align-items: center;
 `;
 
-export const CardImageWrapper = styled.div<{ cardType?: TCardType }>`
+export const CardImageWrapper = styled.div<{ $cardType?: TCardType }>`
   overflow: hidden;
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
 
   ${(props) =>
-    props.cardType == 'disabled' &&
+    props.$cardType == 'disabled' &&
     css`
       opacity: 0.4;
     `}
