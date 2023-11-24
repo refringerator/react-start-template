@@ -1,17 +1,7 @@
 import { FC, PropsWithChildren } from 'react';
 import { styled } from 'styled-components';
-import theme from 'styled-theming';
-import { createRandomProduct, TProduct } from '../../api/products';
+import { TProduct } from '../../api/products';
 import { ProductCard } from '../product-card/ProductCard';
-const headerBackgroundColor = theme('mode', {
-  ocean: 'rgb(48, 96, 138)',
-  forest: '#182612',
-});
-
-const headerColor = theme('mode', {
-  ocean: '#ffffff;',
-  forest: '#637368',
-});
 
 const ListInner = styled.div`
   width: 100%;
@@ -34,7 +24,7 @@ interface ProductListProps {
   items: TProduct[];
 }
 
-export const ProductList: FC<PropsWithChildren<ProductListProps>> = ({ items }) => (
+export const ProductList: FC<ProductListProps> = ({ items }) => (
   <StyledList>
     <ListInner>
       {items.map(({ id, name, categoryName, description, price, priceOld, imageUrl }) => (
@@ -47,6 +37,7 @@ export const ProductList: FC<PropsWithChildren<ProductListProps>> = ({ items }) 
           priceOld={priceOld}
           imageUrl={imageUrl}
           count={0}
+          cardType={'default'}
         />
       ))}
     </ListInner>
