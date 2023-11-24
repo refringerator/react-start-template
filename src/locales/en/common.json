@@ -1,3 +1,5 @@
 {
-  "welcome": "Велком ту май апп."
+  "welcome": "Велком ту май апп.",
+  "to_cart": "Add to cart",
+  "price": "${{price, number(minimumFractionDigits: 2)}}"
 }

@@ -1,7 +1,8 @@
 import { FC, useState } from 'react';
-import { Modal } from '../modal-window/Modal';
-import { Button } from '../button/Button';
+import { createPortal } from 'react-dom';
 import { styled } from 'styled-components';
+import { Button } from '../button/Button';
+import { Modal } from '../modal-window/Modal';
 
 const Input = styled.input`
   padding: 11px 20px;
@@ -16,10 +17,12 @@ export const ModalWrapper: FC = () => {
     <div>
       <Input value={textModal} onChange={(e) => setTextModal(e.target.value)} />
       <Button onClick={() => setModal(true)}>Открыть окно с тексом</Button>
-
-      <Modal visible={showModal} closeModal={() => setModal(false)}>
-        {textModal || 'Тут должен быть текст из поля ввода'}
-      </Modal>
+      {createPortal(
+        <Modal visible={showModal} closeModal={() => setModal(false)}>
+          {textModal || 'Тут должен быть текст из поля ввода'}
+        </Modal>,
+        document.body
+      )}
     </div>
   );
 };

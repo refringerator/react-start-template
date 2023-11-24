@@ -22,6 +22,7 @@ const StyledHeader = styled.div`
   justify-content: space-between;
   background-color: ${headerBackgroundColor};
   color: ${headerColor};
+  z-index: 5;
 `;
 
 const Inner = styled.div`

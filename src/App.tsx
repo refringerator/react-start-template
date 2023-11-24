@@ -1,12 +1,13 @@
 import { useState } from 'react';
+import { I18nextProvider, useTranslation } from 'react-i18next';
 import { ThemeProvider } from 'styled-components';
 import './App.css';
 import { Header } from './components/header/Header';
 import { Layout } from './components/layout/Layout';
 import { Select } from './components/select/Select';
 import { Switch } from './components/switch/Switch';
-import { languageOptions, TLanguages } from './locales/langueages';
-import { I18nextProvider, useTranslation, withTranslation } from 'react-i18next';
+import { languageOptions } from './locales/langueages';
+import { ProductScreen } from './screens/ProductScreen';
 
 type TTheme = 'ocean' | 'forest';
 const defaultTheme: TTheme = 'ocean';
@@ -34,13 +35,13 @@ function App() {
         <ThemeProvider theme={{ mode: themeName || 'ocean' }}>
           <Layout
             header={
-              <Header>
+              <Header menu={<p>{t('welcome')}</p>}>
                 <Switch onChange={HandleThemeChange} switched={themeName !== defaultTheme} />
                 <Select options={languageOptions} onChange={HandleLanguageChange} />
               </Header>
             }
           >
-            <p>{t('welcome')}</p>
+            <ProductScreen />
           </Layout>
         </ThemeProvider>
       </I18nextProvider>
@@ -49,6 +50,3 @@ function App() {
 }
 
 export default App;
-
-// const AppTranslated = withTranslation('common')(App);
-// export default AppTranslated;
