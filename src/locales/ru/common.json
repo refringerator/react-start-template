@@ -1,3 +1,5 @@
 {
-  "welcome": "Я пример приложения."
+  "welcome": "Я пример приложения.",
+  "to_cart": "В корзину",
+  "price": "{{price, number(minimumFractionDigits: 2)}} руб."
 }
